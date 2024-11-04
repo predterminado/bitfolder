@@ -1,0 +1,442 @@
+:root {
+    --bitcoin-orange: #F7931A ;
+    --warm-black: #201E1C;
+    --soft-prange: #FFE9D4;
+    --white: #ffffff;
+    --gray-text: #757575;
+    --light-orange: #FF9536;
+    --very-light-gray: #B5B0AC;
+    --background-black-section-gray: #808080;
+    --lg-font: 2.4rem;
+    --md-font: 1.8rem;
+    --sm-font: 1.4rem;
+}
+* {
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    font-family: "DM Sans", sans-serif;;
+}
+.header-container {
+    width: 100%;
+    background: linear-gradient(210deg,#201E1C, #F7931A);
+    height: 50dvh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 clamp(20px, 15%, 350px);
+    text-align: center;
+    text-wrap: pretty;
+}
+.svg-header-icon {
+    width: clamp(150px , 50%, 200px) ;
+    margin-bottom: 25px;
+}
+.header-subtitle {
+    font-size: var(--lg-font);
+    margin: 40px 0;
+    color: var(--soft-prange);
+    font-weight: 700;
+}
+.header-text {
+    color: var(--soft-prange);
+    font-size: var(--sm-font);
+    font-weight: 500;
+}
+.header-button {
+    position: absolute;
+    bottom: -20px;
+    font-size: var(--sm-font);
+    width: 250px;
+    height: 48px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    border-radius: 4px;
+    box-shadow: 0px 4px 8px var(--very-light-gray);
+}
+.header-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.first-section-info-container {
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+.arrow {
+    rotate: 90deg;
+    margin-left: 10px;
+}
+.entry-image {
+    width: 200px;
+    margin: 0 auto;
+    margin: 50px;
+}
+.entry-image-container {
+    display: flex;
+    justify-content: center;
+}
+.header-subtitle-container {
+    max-width: 600px;
+}
+.arrow-image {
+    width: 17px;
+}
+.first-section-title {
+    font-size: var(--lg-font);
+    color: var(--warm-black);
+    font-weight: 700;
+}
+.first-section-text {
+    font-size: var(--sm-font);
+    color: var(--gray-text);
+    font-weight: 500;
+}
+.exange-rates-container h2 {
+    font-size: var(--md-font);
+    color: var(--light-orange);
+    font-weight: 700;
+    grid-column: 2/3;
+}
+.crypto-name {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--very-light-gray);
+}
+.crypto-price {
+    font-size: var(--sm-font);
+    font-weight: 400;
+    color: #757575;
+}
+.exange-rates-container {
+    display: grid;
+    grid-template-columns: 45px 200px 45px;
+    grid-template-rows: 30px 220px;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+}
+.exange-rates-info-container{
+    grid-area: 2/2/3/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 28px;
+    transform: rotateY(0deg);
+    translate: 0px;
+    transition: transform 0.5s linear, translate 0.5s linear;
+    
+}
+.input-radio {
+    display: none;
+}
+.costs-rates-info-container{
+    grid-area: 2/2/3/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 28px;
+    transform: rotateY(90deg);
+    translate: 200px;
+    transition: transform 0.5s linear, translate 0.5s linear;
+
+}
+.arrow-1{
+    grid-row: 2/3;
+}
+.arrow-2{
+    grid-area: 2/3/3/4;
+    padding: 35px 0 35px 16px;
+    cursor :pointer;
+    transition: scale 0.5s linear;
+}
+.arrow-2:hover{
+    scale: 2;
+    transform: rotateX(180deg);
+    transition: scale 0.5s cubic-bezier(.51,1.29,.52,-0.36),transform 0.5s linear;
+}
+.arrow-2:has(input[type="checkbox"]:checked) ~ .exange-rates-info-container{
+    translate: -150px;
+    transform: rotateY(90deg);
+    transition: transform 0.5s linear, translate 0.5s linear;
+
+}
+.arrow-2:has(input[type="checkbox"]:checked){ 
+    transform: rotateY(180deg);
+    transition: transform 0.5s linear;
+}
+.arrow-2:has(input[type="checkbox"]:checked) ~ .costs-rates-info-container {
+    translate: 0px;
+    transform: rotateY(0deg);
+    transition: transform 0.5s linear, translate 0.5s linear;
+
+}
+.arrow-1:hover ~ .exange-rates-info-container{ 
+    transform: rotateY(50deg);
+    transition: transform 0.5s linear;
+    
+}
+.cypto-info-item{
+    display: flex;
+    justify-content: space-between;
+}
+.price-indicator-container {
+    display: flex;
+    gap: 8px;
+}
+.second-section-container {
+    background: var(--warm-black);
+    width: 100%;
+    position: relative;
+    margin: 120px 0 100px 0;
+}
+.potato-icon {
+    position: absolute;
+    top: -10px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+}
+.second-section-subtitle {
+    font-size: var(--lg-font);
+    font-weight: 700;
+    color: var(--white);
+}
+.second-section-subtitle-text {
+    font-size: var(--sm-font);
+    font-weight: 500;
+    color: var(--background-black-section-gray);
+}
+.features-grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 180px;
+    justify-content: center;
+    align-items: center;
+}
+.features {
+    width: clamp(200px, 90%, 350px);
+    margin: 0 auto;
+    text-align: center;
+}
+.features h2 {
+    margin: 10px 0 20px 0 ;
+    text-wrap: balance;
+}
+.app-features-container {
+    background-color: #282623;
+    width: clamp(200px, 90%, 350px);
+    margin: 10px auto;
+    height: 160px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column ;
+    gap: 8px;
+}
+.app-features-container h2 {
+    font-size: var(--md-font);
+    font-weight: 700;
+    color: var(--white);
+}
+.app-features-container p {
+    font-size: var(--sm-font);
+    font-weight: 500;
+    color: var(--background-black-section-gray);
+}
+.bitcoineyes-container {
+    position: relative;
+    margin-top: 40px;
+}
+.uperpositioned-text {
+    position: absolute;
+    top: 120px;
+    right: 0;
+    left: 0;
+    text-align: center;
+    font-size: var(--lg-font);
+    font-weight: 700;
+    color: var(--soft-prange);
+}
+.img-bitconeyes-second-section {
+    width: 100%;
+    margin-bottom: -3px;
+}
+.paymethods-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    scroll-snap-align: center;
+
+}
+.slide-x {
+    display: flex;
+    width: 320px;
+    gap: 55px;
+    overflow-x: scroll;
+    scroll-snap-type: x proximity;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
+}
+.pay-info-subtitle {
+    text-align: center;
+    color: var(--warm-black);
+    font-size: var(--lg-font);
+    font-weight: 700;
+    margin-bottom: 30px;
+    max-width: 380px;
+}
+.pay-info-text {
+    max-width: 380px;
+    font-size: var(--sm-font);
+    font-weight: 500;
+    color: var(--gray-text);
+    text-align: center;
+}
+.pay-info-extra {
+    padding: 10px 0;
+    background-color: var(--bitcoin-orange);
+    color: var(--white);
+    font-size: var(--sm-font);
+    font-weight: 700;
+    text-align: center;
+    display: inline-block;
+    width: 120px;
+    margin: 35px 0 25px 0;
+    border-radius: 8px;
+}
+.pay-info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.paymethods-grid-container {
+    display: grid;
+    grid-template-columns: 200px;
+    justify-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 8px var(--very-light-gray);
+}
+.paymethods-plan {
+    font-size: var(--sm-font);
+    font-weight: 600;
+}
+.money-mount {
+    font-size: 5.4rem;
+    font-weight: 700;
+    position: relative;
+    top: 30px;
+
+}
+.money-sign {
+    margin-bottom: 20px;
+    position: relative;
+    bottom: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+.paymethods-extrainfo {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--gray-text);
+    text-align: center;
+    margin-bottom: 20px;
+}
+.paymethods-button {
+    width: 150px;
+    height: 40px;
+    border: 2px solid var(--bitcoin-orange);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.arrow33 {
+    color: var(--bitcoin-orange);
+    padding-left: 10px;
+}
+.subtile {
+    font-size: var(--lg-font);
+    font-weight: 700;
+    color: var(--warm-black);
+    text-align: center;
+    max-width: 320px;
+    margin: 10px 0 30px 0;
+}
+.questions-container {
+    display: flex;
+    flex-direction: column;
+    width: clamp(250px, 80%, 450px);
+    align-items: center;
+    margin-bottom: 55px;
+
+}
+.flex-questions-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+}
+summary::marker {
+    content: "";
+}
+.questions-container summary {
+    font-size: var(--sm-font);
+    font-weight: 500;
+    color: var(--warm-black);
+    margin: 10px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-container{
+    width: 100%;
+    height: 35dvh;
+    background-color: var(--bitcoin-orange);
+}
+.footer-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.first-footer-section p {
+    font-size: var(--sm-font);
+    font-weight: 500;
+    color: var(--white);
+    margin: 10px 0;
+}
+.second-footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.second-footer-section p {
+    font-size: 8px;
+    font-weight: 500;
+    color: var(--soft-prange);
+    margin-top: 15px;
+}
+/*
+@media (min-width: 800px) {
+    
+}
+*/
